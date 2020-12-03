@@ -4,9 +4,11 @@ const list = [
     { firstName: 'Piotr', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
     { firstName: 'Jayden', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
   ];
-  ​
+  
   ​
   function islanguage(array,language){
     return array.find( item => item.language === language) !== undefined ? true : false  
   }
   console.log(islanguage(list,'Ruby'));
+
+  
