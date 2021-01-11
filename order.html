@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto Dulce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="Imagenes/logo2.png" type="image/x-icon">
+    <script src="chocotortas.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="chocotortas.html">chocotortas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <aside><img class ="logo" src="Imagenes/logo2.png"></aside>
+    <article>
+      <h1>Order</h1>
+      <div class="chocotortas">
+        <img src="">
+        <div class="columns">
+        <div class="title"></div>
+        <div class="price"></div>
+      </div>
+      <p>
+        Chocotorta clasica con chocolate
+      </p>
+    </div>
+
+      <form action="http://jkorpela.fi/cgi-bin/echo.cgi", method="POST">
+          <div class="input-group">
+              <div>
+                  <label for="name">Names</label>
+              </div>
+              <div>
+                <input type="text" name="name" id="name">
+              </div>
+                <input type= "reset" value="Reset">
+                <input type="submit" value="Order"> 
+             <div>
+              <label for="last-name">Last-names</label>
+             </div>
+            <div>
+              <input type="text" name= last-name id="last-name">
+            </div>
+            <input type= "reset" value="Reset">
+            <input type="submit" value="Order">
+            <div>
+              <label for="direction">Direction</label>
+            </div>
+            <div>
+              <input type="text" name=direction id=direction> 
+            </div>
+            <input type= "reset" value="Reset">
+            <input type="submit" value="Order">
+            <div>
+              <label for="postal-code">Postal-code</label>
+            </div>
+            <div>
+              <input type="number" name=postal-code id=postal-code>
+            </div>
+            <input type= "reset" value="Reset">
+            <input type="submit" value="Order">
+            <div>
+              <label for="phone-number">Phone-number</label>
+            </div>
+            <div>
+              <input type="number" name="phone-number" id="phone-number">
+            </div>
+            <input type= "reset" value="Reset">
+            <input type="submit" value="Order">
+          </div>         
+        </form>
+        </div>         
+      </article>
+  </main>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="chocotortas.html">chocotortas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+<script>
+  window.addEventListener('DOMContentLoaded',() =>{
+    const order = localStorage.getItem('order')
+    if (order){ 
+      const chocotortaOrder = JSON.parse (order)
+      const chocotorta = document.querySelector('.chocotortas')
+      const title = chocotorta.querySelector('.title')
+      const price = chocotorta.querySelector('.price')
+
+      title.innerText = chocotortaOrder.title
+      price.innerText = chocotortaOrder.price
+
+      const img = chocotorta.querySelector('img')
+
+      img.setAttribute ('src', `Imagenes/${chocotortaOrder.id.jpeg}`)
+    }
+  })
+</script>
+</html>
+
+
+
